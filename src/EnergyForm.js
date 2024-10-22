@@ -27,7 +27,7 @@ const EnergyForm = () => {
         `;
 
         try {
-            const response = await axios.post('http://18.188.28.112:8080/graphql', {
+            const response = await axios.post('http://3.23.105.134/:8080/graphql', {
                 query: query,
                 variables: { consumo: value },
             });
@@ -52,7 +52,7 @@ const EnergyForm = () => {
 
         const value = parseFloat(consumo);
         try {
-            const response = await axios.get(`http://18.188.28.112:8080/fornecedores/consumo?consumo=${value}`);
+            const response = await axios.get(`http://3.23.105.134/:8080/fornecedores/consumo?consumo=${value}`);
             if (!response.data.fornecedores || response.data.fornecedores.length === 0) {
                 alert('Nenhum fornecedor encontrado para este consumo com REST.');
             } else {
